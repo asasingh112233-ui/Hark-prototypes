@@ -1,0 +1,13 @@
+{
+  "crop": "potato",
+  "votes": [
+    "leafroll_virus",
+    "leafroll_virus",
+    "leafroll_virus"
+  ],
+  "verdict": "sure",
+  "problem": "leafroll_virus",
+  "action": "Virus, no spray cures it. Pull out sick plants, control aphids, use certified seed next time.",
+  "signs": "The potato leaves show upward rolling and marginal yellowing.",
+  "reply": "नमस्ते किसान भाई, आपके आलू की फसल में लीफरोल वायरस (Leafroll virus) है। \n\nवायरस का कोई स्प्रे इलाज नहीं है। बीमार पौधों को उखाड़ कर बाहर निकाल दें, माहू (aphids) कीट को रोकें, और अगली बार प्रमाणित बीज (certified seed) का ही उपयोग करें।\n\nस्प्रे करने से पहले लेबल जरूर पढ़ें और नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह लें।"
+}

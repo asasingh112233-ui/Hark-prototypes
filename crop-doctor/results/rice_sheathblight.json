@@ -1,0 +1,13 @@
+{
+  "crop": "rice",
+  "votes": [
+    "stem_borer",
+    "stem_borer",
+    "sheath_blight"
+  ],
+  "verdict": "likely",
+  "problem": "stem_borer",
+  "action": "Insect: ask KVK for the right insecticide; light traps help.",
+  "signs": "Dark lesions and damage visible on the lower rice stems near the water line.",
+  "reply": "राम-राम! रउआ धान के फसल देख के लागत बा कि ई 'स्टेम बोरर' (तन्ना छेदक) हो सकेला, बाकिर ई पक्का नइखे। हो सकेला कि ई 'शीथ ब्लाइट' भी होखे।\n\nउपाय खातिर, कीड़ा मारे वाला सही दवा के जानकारी लेवे खातिर नजदीकी कृषि विज्ञान केंद्र (KVK) से संपर्क करीं। खेत में लाइट ट्रैप (बत्ती वाला जाल) लगावे से फायदा होई।\n\nमेहरबानी क के दिन के उजियार में एक ठो अउरी साफ फोटो भेज दीं।\n\nदवा छिड़के से पहिले लेबल जरूर पढ़ लीं आ कृषि विज्ञान केंद्र (KVK) से सलाह लीं।"
+}

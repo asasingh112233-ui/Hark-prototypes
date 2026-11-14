@@ -1,0 +1,13 @@
+{
+  "crop": "rice",
+  "votes": [
+    "brown_spot",
+    "brown_spot",
+    "brown_spot"
+  ],
+  "verdict": "sure",
+  "problem": "brown_spot",
+  "action": "Mancozeb fungicide spray (label dose); give balanced fertiliser, especially potash.",
+  "signs": "Numerous small, circular to oval dark brown spots are scattered across the rice leaves.",
+  "reply": "राम-राम भाई साहब, रउआ धान के फसल में 'ब्राउन स्पॉट' (भूरा धब्बा) के समस्या बा। एकरा खातिर मैनकोजेब (Mancozeb) फफूंदनाशक के छिड़काव लेबल पर लिखल मात्रा के अनुसार करीं। साथ ही संतुलित खाद, खास क के पोटाश के प्रयोग करीं। दवाई छिड़के से पहिले लेबल जरूर पढ़ लीं आ नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह जरूर लीं।"
+}

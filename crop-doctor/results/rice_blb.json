@@ -1,0 +1,13 @@
+{
+  "crop": "rice",
+  "votes": [
+    "bacterial_leaf_blight",
+    "bacterial_leaf_blight",
+    "bacterial_leaf_blight"
+  ],
+  "verdict": "sure",
+  "problem": "bacterial_leaf_blight",
+  "action": "No fungicide cures it. Drain standing water for a few days, stop extra urea; ask KVK about copper-based spray.",
+  "signs": "Water-soaked lesions progressing to extensive yellowing and drying of the leaf tips and margins.",
+  "reply": "रउआ धान के फसल में 'बैक्टीरियल लीफ ब्लाइट' (Bacterial leaf blight) भइल बा, ई पक्का बा। एकर कवनो फफूंदनाशक (fungicide) इलाज नइखे। खेत के पानी कुछ दिन खातिर सुखा दीं आ यूरिया डालल बंद कर दीं। कॉपर-आधारित स्प्रे के बारे में नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह लीं।\n\nदवाई के डिब्बा पर लिखल निर्देश जरूर पढ़ीं आ कवनो भी स्प्रे करे से पहिले नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह जरूर लीं।"
+}

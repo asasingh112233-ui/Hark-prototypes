@@ -1,0 +1,13 @@
+{
+  "crop": "wheat",
+  "votes": [
+    "yellow_rust",
+    "yellow_rust",
+    "yellow_rust"
+  ],
+  "verdict": "sure",
+  "problem": "yellow_rust",
+  "action": "Propiconazole or Tebuconazole spray (label dose) quickly, before it spreads.",
+  "signs": "Bright yellow-orange stripes and pustules running parallel along the length of the wheat leaves.",
+  "reply": "राम-राम किसान भाई! आपकी गेहूं की फसल में पीला रतुआ (yellow rust) की समस्या है। बीमारी फैलने से पहले तुरंत प्रोपिकोनाजोल (Propiconazole) या टेबुकोनाजोल (Tebuconazole) की दवा का लेबल के अनुसार छिड़काव करें। \n\nछिड़काव करने से पहले दवा का पैकेट और लेबल जरूर पढ़ लें तथा अपने नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह लें।"
+}

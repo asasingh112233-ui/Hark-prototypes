@@ -1,0 +1,13 @@
+{
+  "crop": "potato",
+  "votes": [
+    "early_blight",
+    "early_blight",
+    "early_blight"
+  ],
+  "verdict": "sure",
+  "problem": "early_blight",
+  "action": "Mancozeb spray (label dose); remove badly affected lower leaves.",
+  "signs": "The potato leaves show small, dark brown to black spots with concentric rings characteristic of early blight.",
+  "reply": "राम-राम भाई साहब। आपके आलू की फसल में 'अर्ली ब्लाइट' (early blight) रोग पक्का लग गया है।\n\nइसके लिए आप मैनकोज़ेब (Mancozeb) का छिड़काव करें, जो मात्रा लेबल पर लिखी हो वही डालें। साथ ही, जो नीचे की पत्तियां ज़्यादा खराब हो गई हैं, उन्हें तोड़कर हटा दें।\n\nदवाई का छिड़काव करने से पहले लेबल ज़रूर पढ़ें और सलाह के लिए अपने नज़दीकी कृषि विज्ञान केंद्र (KVK) से संपर्क करें।"
+}

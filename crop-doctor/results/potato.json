@@ -1,0 +1,13 @@
+{
+  "crop": "potato",
+  "votes": [
+    "late_blight",
+    "late_blight",
+    "late_blight"
+  ],
+  "verdict": "sure",
+  "problem": "late_blight",
+  "action": "Mancozeb spray to protect; if spreading fast, Cymoxanil+Mancozeb (label dose). Spreads quickly in cold damp weather.",
+  "signs": "Large, dark water-soaked lesions with irregular borders and visible fungal growth are spreading across the potato leaves.",
+  "reply": "नमस्ते किसान भाई, आपकी आलू की फसल में पिछेती झुलसा (लेट ब्लाइट) रोग की पुष्टि हो गई है। यह ठंड और नमी वाले मौसम में बहुत तेजी से फैलता है। फसल को बचाने के लिए मैंकोजेब (Mancozeb) का छिड़काव करें। अगर यह तेजी से फैल रहा है, तो साइमोक्सानिल + मैंकोजेब (Cymoxanil + Mancozeb) का इस्तेमाल करें (लेवल की खुराक अनुसार)। छिड़काव से पहले लेबल को अवश्य पढ़ें और नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह लें।"
+}

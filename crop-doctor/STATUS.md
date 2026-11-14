@@ -1,0 +1,6 @@
+# Fasal Doctor: status (paused 2026-11-13)
+- The idea: a WhatsApp bot for Bihar farmers. A farmer sends a leaf photo (rice, wheat or potato) and gets advice in Hindi or Bhojpuri. A voice-note version is planned.
+- Current code: crop_doctor_v3.py. Usage: `crop_doctor_v3.py photo.jpg <rice|wheat|potato> [hindi|bhojpuri]`. It runs Gemini 3 times, each picking from a fixed list of disease codes. 3/3 agree = sure, 2/3 = likely, otherwise unsure. Treatments come from a fixed table (generic chemical names, no doses, "follow the label"). The model only writes the reply. It uses the user's Gemini API key from the vault, sent to generativelanguage.googleapis.com.
+- Older versions: crop_doctor.py (v1/v2). Their doses and confidence came from the model and were unreliable.
+- Test results: v3 got 10/12 right on web photos (test/, test2/; outputs in out3/). Rice sheath blight was called stem borer 2/3, so it was flagged "likely". Wheat leaf rust (a mixed photo with septoria) was called spot blotch 3/3 sure, a confident miss.
+- Next steps: (1) about 20 real phone photos from real village fields; (2) a KVK / CIB&RC review of the TREATMENTS table; (3) consider softening the "पक्का" wording in replies; (4) WhatsApp and voice-note delivery.

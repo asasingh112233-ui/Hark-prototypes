@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loan Reset Alert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      .x-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 22px 24px; border-radius: var(--r-m); background: var(--fill-tertiary); }
+      .x-field { display: grid; gap: 6px; align-content: start; }
+      .x-field--wide { grid-column: 1 / -1; }
+      .x-field label { font: var(--type-label); color: var(--text-primary); }
+      .x-field input, .x-field select {
+        width: 100%; min-height: var(--tap); padding: 0 12px;
+        border: 1px solid var(--stroke-primary); border-radius: var(--r-s);
+        background: var(--fill-primary-on); color: var(--text-primary); font: var(--type-body);
+      }
+      .x-field input:focus-visible, .x-field select:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 1px; }
+      .x-results { display: grid; gap: 20px; }
+      .x-results .callout { max-width: none; }
+      .x-letter { display: grid; gap: 16px; max-width: 760px; padding: 22px 24px; border-radius: var(--r-m); background: var(--fill-tertiary); }
+      .x-letter__text { margin: 0; white-space: pre-wrap; font: var(--type-body); color: var(--text-primary); }
+      .x-letter__bar { display: flex; align-items: center; gap: 12px; }
+      .x-letter__bar button { cursor: pointer; }
+      @media (max-width: 599px) { .x-form { grid-template-columns: minmax(0, 1fr); padding: 18px; } .x-letter { padding: 18px; } }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <header class="nav glass" data-auto></header>
+      <main class="main">
+        <section class="hero">
+          <div class="hero__copy">
+            <p class="hero__eyebrow">For floating-rate loans in India</p>
+            <h1>Loan Reset Alert</h1>
+            <p class="hero__sub">Find out when your loan's interest rate resets, how much your EMI will change, and get a ready-to-send letter asking your bank for a better rate.</p>
+            <p class="hero__meta">EMI = the fixed amount you pay every month</p>
+          </div>
+          <aside class="callout" aria-label="Next step">
+            <p class="callout__head"><span class="hark-mark" data-size="16"></span> Next step</p>
+            <p class="callout__lead"><strong>Check your own loan.</strong> Enter a few details and see your reset date and new EMI.</p>
+            <a class="btn" href="#calculator">Open the calculator</a>
+          </aside>
+        </section>
+
+        <section class="section" id="news" data-nav="What's new">
+          <div class="head">
+            <p class="head__eyebrow">What's happening</p>
+            <h2>RBI raised rates, and banks are following.</h2>
+          </div>
+          <div class="prose">
+            <p>On 7 Oct 2026 the RBI raised the repo rate by 0.25% to 5.50%, its first hike in this cycle. Banks are now raising their lending rates one by one, so many borrowers' EMIs will quietly go up at their next reset.</p>
+          </div>
+          <section class="stats">
+            <div class="stat"><span class="stat__fig">5.50%</span><span class="stat__label">RBI repo rate</span></div>
+            <div class="stat"><span class="stat__fig">8.90%</span><span class="stat__label">SBI 2-year MCLR, up from 8.75% on 15 Oct 2026</span></div>
+            <div class="stat"><span class="stat__fig">7+</span><span class="stat__label">Big banks that raised MCLR in Oct–Nov 2026</span></div>
+          </section>
+        </section>
+
+        <section class="section" id="jargon" data-nav="Jargon">
+          <div class="head"><h2>The jargon, in plain words.</h2></div>
+          <div class="cards">
+            <div>
+              <h3>Repo rate</h3>
+              <p>The rate RBI lends to banks at. When it goes up, loans get costlier.</p>
+            </div>
+            <div>
+              <h3>MCLR</h3>
+              <p>A bank's own minimum lending rate. Loans linked to it change only on a reset date, usually every 6 months, 1 year or 2 years from when the loan started.</p>
+            </div>
+            <div>
+              <h3>EBLR / RLLR (repo-linked rate)</h3>
+              <p>Moves with the RBI repo rate. Banks must reset these at least once every 3 months, so changes reach you fast.</p>
+            </div>
+            <div>
+              <h3>Fixed rate</h3>
+              <p>Doesn't change. The bank can't raise it.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="calculator" data-nav="Calculator">
+          <div class="head">
+            <h2>When does your rate reset, and what will it cost?</h2>
+            <p class="head__sub">Your details stay on this page. Nothing is saved or sent.</p>
+          </div>
+          <div class="pair">
+            <form class="x-form" id="calc" onsubmit="return false">
+              <div class="x-field">
+                <label for="bank">Bank</label>
+                <select id="bank">
+                  <option>SBI</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option>
+                  <option>Bank of Baroda</option><option>Punjab National Bank</option><option>Bank of India</option>
+                  <option>Indian Bank</option><option>Canara Bank</option><option>Kotak Mahindra Bank</option>
+                  <option>Union Bank of India</option><option>Other</option>
+                </select>
+              </div>
+              <div class="x-field">
+                <label for="type">Loan type</label>
+                <select id="type">
+                  <option>Home</option><option selected>Personal</option><option>Car</option><option>Education</option><option>Other</option>
+                </select>
+              </div>
+              <div class="x-field x-field--wide">
+                <label for="link">Rate linked to</label>
+                <select id="link">
+                  <option value="m6">MCLR 6-month</option>
+                  <option value="m12">MCLR 1-year</option>
+                  <option value="m24" selected>MCLR 2-year</option>
+                  <option value="repo">Repo-linked (EBLR/RLLR)</option>
+                  <option value="fixed">Fixed</option>
+                  <option value="unsure">Not sure</option>
+                </select>
+              </div>
+              <div class="x-field">
+                <label for="rate">Current interest rate (%)</label>
+                <input id="rate" type="number" step="0.01" min="0" inputmode="decimal" value="10.45" />
+              </div>
+              <div class="x-field">
+                <label for="amount">Outstanding amount (₹)</label>
+                <input id="amount" type="text" inputmode="numeric" value="3,00,000" />
+              </div>
+              <div class="x-field">
+                <label for="months">Months left</label>
+                <input id="months" type="number" step="1" min="1" inputmode="numeric" value="48" />
+              </div>
+              <div class="x-field">
+                <label for="start">Loan start / disbursal date</label>
+                <input id="start" type="date" value="2026-02-21" />
+              </div>
+              <div class="x-field x-field--wide">
+                <label for="change">Expected rate change (%)</label>
+                <input id="change" type="number" step="0.05" inputmode="decimal" value="0.15" />
+                <p class="fineprint">Most banks raised by 0.10–0.25% after the Oct 2026 repo hike. SBI raised its MCLR by 0.15% and its repo-linked rate by 0.25%.</p>
+              </div>
+            </form>
+            <div class="x-results" aria-live="polite">
+              <aside class="callout" aria-label="Your alert">
+                <p class="callout__head">Your alert</p>
+                <p class="callout__lead" id="alert">Fill in your loan details.</p>
+                <p class="fineprint" id="tip">Set a reminder one month before this date.</p>
+              </aside>
+              <section class="stats">
+                <div class="stat"><span class="stat__fig" id="days">–</span><span class="stat__label">Days until reset</span></div>
+              </section>
+              <div class="breakdown">
+                <dl>
+                  <div class="row"><dt>Next reset <small id="reset-note">Based on your start date</small></dt><dd id="reset">–</dd></div>
+                  <div class="row"><dt>Current EMI</dt><dd id="emi-now">–</dd></div>
+                  <div class="row"><dt>New EMI <small id="new-rate">At the new rate</small></dt><dd id="emi-new">–</dd></div>
+                  <div class="row"><dt>Difference per month</dt><dd id="emi-diff">–</dd></div>
+                  <div class="row row--total"><dt>Total extra <small id="months-note">Over the months left</small></dt><dd id="total">–</dd></div>
+                </dl>
+                <p class="fineprint">Estimates only. Your bank may change your tenure instead of your EMI.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="letter" data-nav="Letter">
+          <div class="head">
+            <h2>Your repricing request letter.</h2>
+            <p class="head__sub">Filled in from the calculator. Add your account number, name and mobile, then send it to your branch or by email.</p>
+          </div>
+          <div class="x-letter">
+            <p class="x-letter__text" id="letter-text"></p>
+            <div class="x-letter__bar">
+              <button type="button" class="btn" id="copy">Copy letter</button>
+              <span class="fineprint" id="copy-status" aria-live="polite"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="rates" data-nav="Rates">
+          <div class="head">
+            <h2>Most big banks raised MCLR by 0.10–0.15%.</h2>
+            <p class="head__sub">Rates update automatically every morning from the banks' official websites. Rates last checked: <time id="rates-last-checked" datetime="2026-11-14">14 Nov 2026</time> IST.</p>
+            <p class="head__sub">Always confirm on your bank's website.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Bank</th><th scope="col">1-year MCLR</th><th scope="col">Repo-linked rate</th><th scope="col">Last change</th><th scope="col">Source note</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">SBI <small>2-year MCLR 8.90%</small></th><td class="num">8.85%</td><td>EBLR 8.15% + spreads / RLLR 7.75% + CRP</td><td>+0.15% from 15 Oct 2026</td><td><a class="link" href="https://sbi.bank.in/web/interest-rates/interest-rates/mclr" target="_blank" rel="noopener">sbi.bank.in</a></td></tr>
+                <tr><th scope="row">Punjab National Bank</th><td class="num">8.90%</td><td>RLLR 8.35% (from 8 Oct 2026)</td><td>+0.10% from 1 Nov 2026</td><td><a class="link" href="https://pnb.bank.in/interst-rate-on-advances-linked-to-mclr.html" target="_blank" rel="noopener">pnb.bank.in</a></td></tr>
+                <tr><th scope="row">Bank of Baroda</th><td class="num">8.85%</td><td class="muted">Check bank site</td><td>+0.10% from 12 Nov 2026</td><td><a class="link" href="https://bankofbaroda.bank.in/interest-rate-and-service-charges/retail-loans-interest-rates/mclr-historical-data" target="_blank" rel="noopener">Bank's 12 Nov filing; rate page not yet updated</a></td></tr>
+                <tr><th scope="row">Bank of India</th><td class="num">8.90%</td><td class="muted">Check bank site</td><td>+0.10% from 1 Nov 2026</td><td class="muted">Not rechecked today (bank site blocked)</td></tr>
+                <tr><th scope="row">Union Bank of India</th><td class="num">8.85%</td><td>EBLR 8.25% (from 8 Oct 2026)</td><td>MCLR from 21 Oct 2026</td><td><a class="link" href="https://www.unionbankofindia.bank.in/en/common/interest-rates-loans-and-advances" target="_blank" rel="noopener">unionbankofindia.bank.in</a></td></tr>
+                <tr><th scope="row">Indian Bank</th><td class="num">8.95%</td><td>RBLR 8.20% (from 8 Oct 2026)</td><td>+0.10% from 3 Nov 2026</td><td><a class="link" href="https://indianbank.bank.in/documents/d/guest/benchmark-lending-rates-wef-03112026" target="_blank" rel="noopener">indianbank.bank.in</a></td></tr>
+                <tr><th scope="row">HDFC Bank</th><td class="num">8.45%</td><td class="muted">Repo + spread (no single rate published)</td><td>+0.05–0.15% from 7 Nov 2026</td><td><a class="link" href="https://www.hdfc.bank.in/interest-rates" target="_blank" rel="noopener">hdfc.bank.in</a></td></tr>
+                <tr><th scope="row">Canara Bank</th><td class="num">8.90%</td><td>RLLR 8.25% (from 9 Oct 2026)</td><td>+0.10% on all tenures from 12 Nov 2026</td><td><a class="link" href="https://www.canarabank.bank.in/documents/d/guest/letter-1-" target="_blank" rel="noopener">canarabank.bank.in</a></td></tr>
+                <tr><th scope="row">ICICI Bank</th><td class="num">8.45%</td><td>I-EBLR 8.65% (from 7 Oct 2026)</td><td>MCLR from 22 Oct 2026</td><td><a class="link" href="https://www.icici.bank.in/interest-rate" target="_blank" rel="noopener">icici.bank.in</a></td></tr>
+                <tr><th scope="row">Axis Bank</th><td class="num">8.70%</td><td class="muted">Repo + spread (no single rate published)</td><td>MCLR from 17 Oct 2026</td><td><a class="link" href="https://www.axis.bank.in/mclr-rates" target="_blank" rel="noopener">axis.bank.in</a></td></tr>
+                <tr><th scope="row">Kotak Mahindra Bank</th><td class="num">8.30%</td><td class="muted">Repo + spread (no single rate published)</td><td>MCLR from 16 Oct 2026</td><td><a class="link" href="https://www.kotak.bank.in/en/rates/mclr-rate.html" target="_blank" rel="noopener">kotak.bank.in</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://sbi.bank.in/web/interest-rates/interest-rates/mclr" target="_blank" rel="noopener">SBI MCLR</a>
+            <a class="btn" href="https://sbi.bank.in/web/interest-rates/external-benchmark-based-lending-rate" target="_blank" rel="noopener">SBI EBLR</a>
+            <a class="btn" href="https://www.rbi.org.in/Home.aspx" target="_blank" rel="noopener">RBI</a>
+          </div>
+        </section>
+
+        <section class="section" id="next" data-nav="Next steps">
+          <div class="head"><h2>Four things to do this week.</h2></div>
+          <div class="steps">
+            <article class="step">
+              <div class="step__intro"><p class="step__num">01</p><p class="step__eyebrow">Find</p></div>
+              <div><h3>Find your rate and its benchmark</h3><p>Look in your bank app or your sanction letter (the approval letter the bank gave you).</p></div>
+            </article>
+            <article class="step">
+              <div class="step__intro"><p class="step__num">02</p><p class="step__eyebrow">Remind</p></div>
+              <div><h3>Note your reset date</h3><p>Set a reminder a month before it.</p></div>
+            </article>
+            <article class="step">
+              <div class="step__intro"><p class="step__num">03</p><p class="step__eyebrow">Ask</p></div>
+              <div><h3>Ask for a better rate</h3><p>If your rate is much higher than the bank's current offers, send the <a class="link" href="#letter">repricing letter</a> or compare refinance offers (moving the loan to another bank).</p></div>
+            </article>
+            <article class="step">
+              <div class="step__intro"><p class="step__num">04</p><p class="step__eyebrow">Prepay</p></div>
+              <div><h3>Prepay your highest-rate loan first</h3><p>When you have spare money, paying part of that loan early saves the most.</p></div>
+            </article>
+          </div>
+        </section>
+      </main>
+      <footer class="foot">
+        <p>Prototype. Estimates only, not financial advice.</p>
+        <nav aria-label="Back to sections" data-auto></nav>
+        <a class="badge" href="https://hark.com/" target="_blank" rel="noopener"><span class="hark-mark"></span><span>built by hark</span></a>
+      </footer>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var $ = function (id) { return document.getElementById(id); };
+        var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var BLANK = "________";
+        function fmtDate(d) { return d.getDate() + " " + MONTHS[d.getMonth()] + " " + d.getFullYear(); }
+        function rupees(n) { return "₹" + Math.round(n).toLocaleString("en-IN"); }
+        function addMonths(base, m) {
+          var y = base.getFullYear(), mo = base.getMonth() + m;
+          var last = new Date(y, mo + 1, 0).getDate();
+          return new Date(y, mo, Math.min(base.getDate(), last));
+        }
+        function emi(p, rate, n) {
+          if (!(p > 0) || !(n > 0)) return 0;
+          var r = rate / 1200;
+          if (r === 0) return p / n;
+          var f = Math.pow(1 + r, n);
+          return (p * r * f) / (f - 1);
+        }
+        function today() { var t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); }
+        function nextAnniversary(start, step) {
+          var t = today(), k = 1, d = addMonths(start, step);
+          while (d <= t && k < 2000) { k++; d = addMonths(start, step * k); }
+          return d;
+        }
+        function nextQuarter() {
+          var t = today(), y = t.getFullYear(), q = [0, 3, 6, 9];
+          for (var i = 0; i < 4; i++) { var d = new Date(y, q[i], 1); if (d > t) return d; }
+          return new Date(y + 1, 0, 1);
+        }
+        var BENCH = { m6: "6-month MCLR", m12: "1-year MCLR", m24: "2-year MCLR", repo: "the repo rate (EBLR/RLLR)", fixed: "a fixed rate", unsure: BLANK };
+
+        function update() {
+          var bank = $("bank").value, type = $("type").value, link = $("link").value;
+          var rate = parseFloat($("rate").value) || 0;
+          var amount = parseFloat(String($("amount").value).replace(/[^0-9.]/g, "")) || 0;
+          var months = Math.round(parseFloat($("months").value) || 0);
+          var change = parseFloat($("change").value) || 0;
+          var sv = $("start").value.split("-");
+          var start = sv.length === 3 ? new Date(+sv[0], +sv[1] - 1, +sv[2]) : null;
+          var loanWord = type === "Other" ? "loan" : type.toLowerCase() + " loan";
+          var fixed = link === "fixed";
+          var effChange = fixed ? 0 : change;
+
+          var now = emi(amount, rate, months), next = emi(amount, rate + effChange, months);
+          var diff = next - now;
+          $("emi-now").textContent = rupees(now);
+          $("emi-new").textContent = rupees(next);
+          $("new-rate").textContent = "At " + (rate + effChange).toFixed(2) + "%";
+          $("emi-diff").textContent = (diff >= 0 ? "+" : "−") + rupees(Math.abs(diff));
+          $("total").textContent = (diff >= 0 ? "+" : "−") + rupees(Math.abs(diff * months));
+          $("months-note").textContent = "Over " + months + " months left";
+
+          var reset = null, note = "Based on your start date", alertText, tip = "Set a reminder one month before this date.";
+          var dir = diff >= 0 ? "rise" : "fall";
+          var emiLine = "Expect your EMI to " + dir + " by about " + rupees(Math.abs(diff)) + " a month.";
+          if (link === "m6" || link === "m12" || link === "m24") {
+            if (start) {
+              reset = nextAnniversary(start, { m6: 6, m12: 12, m24: 24 }[link]);
+              alertText = "Your " + loanWord + " likely resets on " + fmtDate(reset) + ". " + emiLine;
+            } else {
+              alertText = "Add your loan start date to find your reset date.";
+            }
+          } else if (link === "repo") {
+            reset = nextQuarter();
+            note = "Within 3 months of the RBI change, usually your bank's next quarterly reset";
+            alertText = "Your " + loanWord + " will likely reset within 3 months of the RBI change, usually your bank's next quarterly reset on " + fmtDate(reset) + ". " + emiLine;
+          } else if (fixed) {
+            note = "Fixed rate";
+            alertText = "Your rate won't change. Your EMI stays at " + rupees(now) + " a month.";
+            tip = "A fixed rate can't be raised by the bank.";
+          } else {
+            note = "Benchmark not known";
+            alertText = "Check your sanction letter or the loan details in your bank's app to find your reset date. If your rate moves, " + emiLine.charAt(0).toLowerCase() + emiLine.slice(1);
+            tip = "Once you know the date, set a reminder one month before it.";
+          }
+          $("alert").textContent = alertText;
+          $("tip").textContent = tip;
+          $("reset-note").textContent = note;
+          if (reset) {
+            $("reset").textContent = fmtDate(reset);
+            $("days").textContent = Math.round((reset - today()) / 86400000).toLocaleString("en-IN");
+          } else {
+            $("reset").textContent = fixed ? "No reset" : "–";
+            $("days").textContent = "–";
+          }
+
+          var b = bank === "Other" ? BLANK : bank;
+          var lt = type === "Other" ? BLANK : type.toLowerCase();
+          $("letter-text").textContent =
+            "To,\nThe Branch Manager, " + b + "\n\n" +
+            "Subject: Request to review interest rate on my " + lt + " loan\n\n" +
+            "Dear Sir/Madam,\n\n" +
+            "I hold a " + lt + " loan with your bank, currently at " + rate + "% linked to " + BENCH[link] + ". Given the recent rate changes, I request you to: (1) confirm my next reset date and the revised rate; (2) consider reducing the spread on my loan or offer a switch to a lower repo-linked or fixed rate, as per RBI's guidelines on reset of floating interest rates (Aug 2023), which require banks to give borrowers the option to switch to a fixed rate or change EMI/tenure; (3) share any charges for switching or prepayment.\n\n" +
+            "Loan account number: " + BLANK + "\n" +
+            "Name: " + BLANK + "  Mobile: " + BLANK + "\n\n" +
+            "Thank you.";
+        }
+
+        $("amount").addEventListener("blur", function () {
+          var v = parseFloat(this.value.replace(/[^0-9.]/g, ""));
+          if (v > 0) this.value = Math.round(v).toLocaleString("en-IN");
+        });
+        $("calc").addEventListener("input", update);
+        $("calc").addEventListener("change", update);
+        $("copy").addEventListener("click", function () {
+          var text = $("letter-text").textContent, status = $("copy-status");
+          function done(ok) { status.textContent = ok ? "Copied" : "Select the text to copy it"; setTimeout(function () { status.textContent = ""; }, 2500); }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback(text)); });
+          } else { done(fallback(text)); }
+        });
+        function fallback(text) {
+          var ta = document.createElement("textarea");
+          ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+          document.body.appendChild(ta); ta.select();
+          var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+          document.body.removeChild(ta); return ok;
+        }
+        update();
+      })();
+    </script>
+  </body>
+</html>

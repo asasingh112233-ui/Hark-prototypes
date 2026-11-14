@@ -1,0 +1,13 @@
+{
+  "crop": "wheat",
+  "votes": [
+    "spot_blotch",
+    "spot_blotch",
+    "spot_blotch"
+  ],
+  "verdict": "sure",
+  "problem": "spot_blotch",
+  "action": "Propiconazole spray (label dose); balanced fertiliser.",
+  "signs": "The leaves show characteristic dark brown, oblong lesions with indistinct borders.",
+  "reply": "गेहूं की फसल में 'स्पॉट ब्लॉच' (spot blotch) की समस्या पक्की है। आप प्रोपिकोनाज़ोल (Propiconazole) का छिड़काव लेबल पर लिखी मात्रा के अनुसार करें और संतुलित खाद का प्रयोग करें।\n\nदवाई का छिड़काव करने से पहले लेबल को ध्यान से पढ़ें और सलाह के लिए अपने नजदीकी कृषि विज्ञान केंद्र (KVK) से संपर्क करें।"
+}

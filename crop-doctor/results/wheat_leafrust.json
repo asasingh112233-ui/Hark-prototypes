@@ -1,0 +1,13 @@
+{
+  "crop": "wheat",
+  "votes": [
+    "spot_blotch",
+    "spot_blotch",
+    "spot_blotch"
+  ],
+  "verdict": "sure",
+  "problem": "spot_blotch",
+  "action": "Propiconazole spray (label dose); balanced fertiliser.",
+  "signs": "Elongated, dark brown necrotic blotches and spots are visible across the wheat leaves.",
+  "reply": "राम-राम जी! आपके गेहूँ की फसल में ‘स्पॉट ब्लॉच’ (धब्बेदार झुलसा) बीमारी की पुष्टि हो गई है। \n\nइसके बचाव के लिए प्रोपिकोनाजोल (Propiconazole) का छिड़काव लेबल पर लिखी सही मात्रा में करें और खेतों में संतुलित खाद दें। \n\nछिड़काव करने से पहले दवा की डिब्बी पर लिखा निर्देश जरूर पढ़ लें और किसी भी मदद के लिए अपने नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह लें। धन्यवाद!"
+}

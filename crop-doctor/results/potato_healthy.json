@@ -1,0 +1,13 @@
+{
+  "crop": "potato",
+  "votes": [
+    "healthy",
+    "healthy",
+    "healthy"
+  ],
+  "verdict": "sure",
+  "problem": "healthy",
+  "action": "No spray needed. Keep checking every few days.",
+  "signs": "The potato leaves appear vibrant green with no visible lesions, discoloration, or signs of disease.",
+  "reply": "नमस्ते। आपके आलू की फसल एकदम स्वस्थ है। अभी किसी भी दवा का छिड़काव करने की जरूरत नहीं है। बस हर कुछ दिनों में फसल को देखते रहें।\n\nदवा का छिड़काव करने से पहले लेबल जरूर पढ़ें और अपने नजदीकी कृषि विज्ञान केंद्र (KVK) से सलाह लें।"
+}
